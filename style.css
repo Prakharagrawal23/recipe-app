@@ -1,0 +1,244 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #130f40;
+}
+.main{
+    width: 100%;
+    height: 100vh;
+    /* height: 100vh; */
+    background-color: #130f40;
+}
+.header{
+    width: 100%;
+    height: 100px;
+    background-color: #222f3e;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* justify-content: center;
+    align-items: center; */
+}
+.header-end{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.text{
+    /* display: flex; */
+    color: white;
+    padding: 30px 30px;
+    font-size: xx-large;
+}
+input{
+    width: 300px;
+    height: 50px;
+    margin: 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: x-large;
+}
+.btn{
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    margin: 20px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background-color: #ff7979;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    transition: background-color 0.2s ease-in-out;
+}
+.btn:hover{
+    background-color: #ff4d4d;
+}
+
+/* here we are using the our create div which is append in recipe_container */
+.recipe_container{
+    /* margin-top: 16px; */
+    text-align: center;
+    color: white;
+    font-size: x-large;
+
+    /* using grid */
+    display: grid;
+    /* auto-fit - jitni uss page per image set ho sakti hai vo ho jayegi */
+    /*                                             min   max */
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 40px;
+    width: 80%;
+    margin: 10px auto;
+    padding: 20px;
+    place-items: center;
+}
+.recipe{
+
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(134, 203, 233, 0.1) , -5px -5px 10px rgba(137, 247, 255, 0.5);
+    cursor: pointer;
+    max-width: 350px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.recipe:hover{
+    transform: scale(1.02);
+}
+
+.recipe img{
+    height: 300px;
+}
+
+.recipe h3{
+    font-size: 24px;
+}
+.recipe p {
+    font-size: 20px;
+    color: gray;
+    margin: 5px 0;
+}
+.recipe span{
+    font-weight: 600;
+}
+
+.recipe button{
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    margin: 20px auto;
+    cursor: pointer;
+    color: white;
+    border: none;
+    background-color: #ff7979;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    transition: background-color 0.2s ease-in-out;
+}
+.recipe button:hover{
+    background-color: #ff4d4d;
+}
+
+
+/* recipe details */
+
+.repipe_details{
+    /* bydefault display is none */
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #ff7979;
+    -webkit-transform: translate(-50%,-50%);
+    border-radius: 12px;
+    width: 40%;
+    height: 60%;
+    font-size: 20px;
+    transition: all 0.5 ease-in-out;
+    overflow-y: scroll;
+}
+
+.repipe_details::-webkit-scrollbar{
+    width: 10px;
+}
+.repipe_details::-webkit-scrollbar-thumb{
+    border-radius: 16px;
+    background-color: gray;
+    --webkit-border-radius :16px;
+}
+/* scroll bar in body tag */
+body::-webkit-scrollbar{
+    width: 10px;
+}
+body::-webkit-scrollbar-thumb{
+    border-radius: 16px;
+    background-color: gray;
+    --webkit-border-radius :16px;
+}
+body::-webkit-scrollbar-track{
+    background-color: lightgray;
+}
+.recipe_detail_content{
+    padding: 30px;
+}
+.recipeName{
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.IngredientList{
+    margin-top: 10px;
+    margin-left: 20px;
+    line-height: 30px;
+
+}
+.recipeInstruction p{
+    line-height: 30px;
+    white-space: pre-line;
+}
+
+.recipe_closeBtn{
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 40px;
+    background-color: #ff4d4d;
+    color: white;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+@media screen and (max-width:700px) {
+    .header{
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .text{
+        margin-left: 200px;
+    }
+    input{
+        width: 400px;  
+    }
+    .btn{
+        width: 120px;     
+    }
+    .header-end{
+        margin-bottom: 100px;
+    }
+}
+@media screen and (max-width:600px) {
+    .header{
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .text{
+        margin-left: 200px;
+    }
+    input{
+        width: 300px;  
+    }
+    .btn{
+        width: 120px;     
+    }
+    .header-end{
+        margin-bottom: 100px;
+    }
+}
